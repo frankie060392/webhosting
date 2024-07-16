@@ -8,7 +8,13 @@
       window.onload = function() {
         // Deep link to your app goes here
         document.getElementById("l").src = "applinks:u2u-wallet.uniultra.xyz?refCode=123123";
-        navigator.clipboard.writeText('123123');
+        navigator.clipboard.writeText("123123").then(function() {
+          alert('123123')
+        /* clipboard successfully set */
+        }, function() {
+          /* clipboard write failed */
+          alert('copy failed')
+        });
         alert('taolao')
         setTimeout(function() {
           // Link to the App Store should go here -- only fires if deep link fails                

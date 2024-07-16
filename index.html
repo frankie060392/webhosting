@@ -1,24 +1,22 @@
 <!doctype html>
 <html>
   <head>
-    <title>This is the title of the webpage!</title>
-    <button class="openapp" onclick="openapp()">Open</button>
+    <title>Welcome to u2u wallet!</title>
   </head>
   <body>
+    <div class="body">
+      <button class="open-app" onclick="openapp()">Open</button>
+    </div>
     <script type="text/javascript">
       function openapp() {
+        const url = window.location.href
+        const deepLink = 'applinks:u2u-wallet.uniultra.xyz'
         // Deep link to your app goes here
-        document.getElementById("l").src = "applinks:u2u-wallet.uniultra.xyz?refCode=123123";
-        navigator.clipboard.writeText("123123").then(function() {
-          alert('123123')
-        /* clipboard successfully set */
+        document.getElementById("l").src = `${deepLink}`;
+        navigator.clipboard.writeText(url).then(function() {
         }, function(e) {
-          alert(e)
-          /* clipboard write failed */
-          alert('copy failed')
         });
         setTimeout(function() {
-          // Link to the App Store should go here -- only fires if deep link fails                
           window.location = "https://apps.apple.com/vn/app/u2u-wallet/id6446194312?l=vi";
         }, 500);
       }
@@ -26,3 +24,12 @@
     <iframe id="l" width="1" height="1" style="visibility:hidden"></iframe>
   </body>
 </html>
+
+<style>
+  .body {
+    padding: 60px;
+  }
+  .open-app {
+    padding: 10px;
+  }
+</style>

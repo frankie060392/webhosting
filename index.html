@@ -5,23 +5,38 @@
   </head>
   <body>
     <div class="body">
-      <button class="open-app" onclick="openapp()">Open</button>
+      <div>
+        <div class="fugu-hero-content">
+            <h1 class="wow fadeInUpX" data-wow-delay="0s" style="visibility: visible; animation-delay: 0s; animation-name: fadeInUpX;">U2U WALLET</h1>
+            <h3>Super App to the Web3 world</h3>
+            <p class="wow fadeInUpX" data-wow-delay="0.25s" style="visibility: visible; animation-delay: 0.25s; animation-name: fadeInUpX;">
+                * Self-custody wallet<br>
+                * Web3 Dapp browser<br>
+                * Store cryptocurrencies and NFTs in one place
+            </p>
+            <div class="fugu-app-btn-wrap wow fadeInUpX" data-wow-delay="0.40s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUpX;">
+                <button class="open-app fugu-app-btn" onclick="openapp()">Open</button>
+                <!-- <a class="fugu-app-btn" href="https://apps.apple.com/vn/app/u2u-wallet/id6446194312" target="_blank"><img src="assets/images/all-img/app-store.png" alt="U2U Wallet"></a>
+                <a class="fugu-app-btn" href="https://play.google.com/store/apps/details?id=org.u2u.wallet&amp;hl=vi&amp;gl=US" target="_blank"><img src="assets/images/all-img/play-store.png" alt="U2U Wallet"></a>
+                <a class="fugu-app-btn hideMobile" href="https://chrome.google.com/webstore/detail/u2u-wallet/ebjfhkbnnbjhcedilbedghedfgiaioed" target="_blank"><img src="assets/images/all-img/chrome-web.png" alt="U2U Wallet"></a> -->
+            </div>
+        </div>
+      </div>
+      
     </div>
     <script type="text/javascript">
-      // function openapp() {
+      function openapp() {
+        const url = window.location.href
+        const deepLink = 'applinks:u2u-wallet.uniultra.xyz'
+        // Deep link to your app goes here
+        document.getElementById("l").src = `${deepLink}`;
+        navigator.clipboard.writeText(url).then(function() {
+        }, function(e) {
+        });
         setTimeout(function() {
-          const url = window.location.href
-          const deepLink = 'applinks:u2u-wallet.uniultra.xyz'
-          // Deep link to your app goes here
-          document.getElementById("l").src = `${deepLink}`;
-          navigator.clipboard.writeText(url).then(function() {
-          }, function(e) {
-          });
-          setTimeout(function() {
-            window.location = "https://apps.apple.com/vn/app/u2u-wallet/id6446194312?l=vi";
-          }, 500);
-        }, 1000)
-      // }
+          window.location = "https://apps.apple.com/vn/app/u2u-wallet/id6446194312?l=vi";
+        }, 500);
+      }
     </script>
     <iframe id="l" width="1" height="1" style="visibility:hidden"></iframe>
   </body>
@@ -33,5 +48,22 @@
   }
   .open-app {
     padding: 10px;
+  }
+  .fugu-hero-content p {
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: -0.5px;
+    color: var(--gray-800);
+  }
+  .fugu-app-btn-wrap {
+    margin: 55px 0 95px;
+  }
+  .fugu-app-btn-wrap {
+      display: flex;
+      width: 100%;
+  }
+  a.fugu-app-btn {
+      display: inline-block;
+      margin-right: 10px;
   }
 </style>

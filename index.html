@@ -11,7 +11,8 @@
         navigator.clipboard.writeText("123123").then(function() {
           alert('123123')
         /* clipboard successfully set */
-        }, function() {
+        }, function(e) {
+          alert(e)
           /* clipboard write failed */
           alert('copy failed')
         });

@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  proxy:
+    image: nginx
+    container_name: proxy
+    volumes:
+      - ./templates:/etc/nginx/templates
+      - ./client:/var/www/html
+    ports:
+      - 80:80
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: 300m

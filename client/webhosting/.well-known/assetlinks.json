@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "org.uniultra.wallet",
+    "sha256_cert_fingerprints":
+    ["DB:15:86:5E:88:8B:83:26:90:2A:5A:EA:19:CA:BF:5E:16:04:6E:FE:6A:4F:97:17:DA:BC:83:A0:70:FA:F0:35"]
+  }
+}]

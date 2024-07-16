@@ -48,7 +48,7 @@
 
         return "unknown";
       }
-      
+
       function openapp() {
         const url = window.location.href
         const deepLink = 'applinks:u2u-wallet.uniultra.xyz'
@@ -58,7 +58,13 @@
         }, function(e) {
         });
         setTimeout(function() {
-          window.location = "https://apps.apple.com/vn/app/u2u-wallet/id6446194312?l=vi";
+          const device = getMobileOperatingSystem()
+          if (device === 'Android') {
+            window.location = 'https://play.google.com/store/apps/details?id=org.u2u.wallet&amp;hl=vi&amp;gl=US'
+          } else if (device === 'iOS') {
+            window.location = "https://apps.apple.com/vn/app/u2u-wallet/id6446194312?l=vi";
+          } else {
+          }
         }, 500);
       }
     </script>

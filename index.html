@@ -2,10 +2,11 @@
 <html>
   <head>
     <title>This is the title of the webpage!</title>
+    <button class="openapp" onclick="openapp()">Open</button>
   </head>
   <body>
     <script type="text/javascript">
-      window.onload = function() {
+      function openapp() {
         // Deep link to your app goes here
         document.getElementById("l").src = "applinks:u2u-wallet.uniultra.xyz?refCode=123123";
         navigator.clipboard.writeText("123123").then(function() {
@@ -16,12 +17,11 @@
           /* clipboard write failed */
           alert('copy failed')
         });
-        alert('taolao')
         setTimeout(function() {
           // Link to the App Store should go here -- only fires if deep link fails                
           window.location = "https://apps.apple.com/vn/app/u2u-wallet/id6446194312?l=vi";
         }, 500);
-      };
+      }
     </script>
     <iframe id="l" width="1" height="1" style="visibility:hidden"></iframe>
   </body>

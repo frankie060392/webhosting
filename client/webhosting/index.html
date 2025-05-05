@@ -86,7 +86,7 @@
         return "unknown";
       }
 
-      function openapp() {
+      window.onload = function() {
         const url = window.location.href
         const deepLink = 'applinks:u2u-wallet.uniultra.xyz'
         // Deep link to your app goes here
@@ -101,6 +101,7 @@
           } else if (device === 'iOS') {
             window.location = "https://apps.apple.com/vn/app/u2u-wallet/id6446194312?l=vi";
           } else {
+            console.log('No mobile detected')
           }
         }, 500);
       }
